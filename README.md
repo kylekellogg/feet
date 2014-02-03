@@ -18,6 +18,6 @@ feet .
 ```
 
 ## TODO
-- [ ] Incorporate Busted for testing
-- [ ] Establish requirements
-- [ ] Establish standardized installation
+- Incorporate Busted for testing
+- Establish requirements
+- Establish standardized installation
