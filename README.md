@@ -16,3 +16,8 @@ _Needs to be filled in_
 cd {target directory}
 feet .
 ```
+
+## TODO
+- [ ] Incorporate Busted for testing
+- [ ] Establish requirements
+- [ ] Establish standardized installation
