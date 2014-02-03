@@ -1,4 +1,18 @@
-love-feet
-=========
+# Feet
 
 A LÖVE bootstrapper to get you up and standing on your own two feet quickly and easily.
+
+## Requirements
+
+_Needs to be filled in_
+
+## Installation
+
+_Needs to be filled in_
+
+## Usage
+
+```
+cd {target directory}
+feet .
+```
