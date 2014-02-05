@@ -29,7 +29,17 @@ cd {target directory}
 feet .
 ```
 
+### Optional Arguments
+
+- wasd  (bool)  defaults to false
+- arrows  (bool)    defaults to false
+- keys  (bool)  defaults to false
+- title  (string)   defaults to ''
+- width  (int)  defaults to 800
+- height  (int) defaults to 600
+
 ## TODO
 - Incorporate Busted for testing
 - Establish requirements
-- Establish standardized installation
+- Establish Windows installation
+- Establish Linux installation
