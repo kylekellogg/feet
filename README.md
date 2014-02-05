@@ -38,19 +38,19 @@ feet .
 
 ### Optional Arguments
 
-| Arg       | Type  | Default       | Description | Usage     |
-| :-------- | :---- | :------------ | :---------- | :-------- |
-| wasd      | bool  | false         | Autogenerates code to handle WASD key input | `feet wasd=true` |
-| arrows    | bool  | false         | Autogenerates code to handle arrow key input | `feet arrows=true` |
-| keys      | bool  | false         | Autogenerates code to handle WASD and arrow key input | `feet keys=true` |
-| title     | string| ''            | Autogenerates title in conf.lua | `feet title="Wrap Titles With Spaces In Quotes"` |
-| width     | int   | 800           | Autogenerates width in conf.lua | `feet width=1024` |
-| height    | int   | 600           | Autogenerates height in conf.lua | `feet height=768` |
-| physics   | bool  | false         | Autogenerates a new physics world with 0 x gravity, 9.81 * 64 y gravity, the ability to sleep and sets a default meter size of 64 | `feet physics=true` |
-| meter     | int   | 64            | Will flag physics as true if set to anything. Sets a default meter size. | `feet meter=32` |
-| gravity   | int   | 9.81 * meter  | Will flag physics as true if set to anything. Sets the y gravity and is given preferential treatment over gravityY if that flag is also set. | `feet gravity=50` |
-| gravityX  | int   | 0             | Will flag physics as true if set to anything. Sets the x gravity. | `feet gravityX=10` |
-| gravityY  | int   | 9.81 * meter  | Will flag physics as true if set to anything. Sets the y gravity. | `feet gravityY=75` |
+| Arg       | Type  | Default       | Usage     | Description |
+| :-------- | :---- | :------------ | :-------- | :---------- |
+| wasd      | bool  | false         | `feet wasd=true` | Autogenerates code to handle WASD key input |
+| arrows    | bool  | false         | `feet arrows=true` | Autogenerates code to handle arrow key input |
+| keys      | bool  | false         | `feet keys=true` | Autogenerates code to handle WASD and arrow key input |
+| title     | string| ''            | `feet title="Wrap Titles With Spaces In Quotes"` | Autogenerates title in conf.lua |
+| width     | int   | 800           | `feet width=1024` | Autogenerates width in conf.lua |
+| height    | int   | 600           | `feet height=768` | Autogenerates height in conf.lua |
+| physics   | bool  | false         | `feet physics=true` | Autogenerates a new physics world with 0 x gravity, 9.81 * 64 y gravity, the ability to sleep and sets a default meter size of 64 |
+| meter     | int   | 64            | `feet meter=32` | Will flag physics as true if set to anything. Sets a default meter size. |
+| gravity   | int   | 9.81 * meter  | `feet gravity=50` | Will flag physics as true if set to anything. Sets the y gravity and is given preferential treatment over gravityY if that flag is also set. |
+| gravityX  | int   | 0             | `feet gravityX=10` | Will flag physics as true if set to anything. Sets the x gravity. |
+| gravityY  | int   | 9.81 * meter  | `feet gravityY=75` | Will flag physics as true if set to anything. Sets the y gravity. |
 
 You can also chain optional arguments together in a space delimited list for more customization, e.g.
 ```
