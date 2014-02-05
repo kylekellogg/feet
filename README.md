@@ -105,7 +105,7 @@ feet keys=true width=1024 height=768 title="Steve Holt!"
 ```
 
 ## TODO
-- Incorporate Busted for testing
+- Incorporate [Busted](http://olivinelabs.com/busted/) for testing
 - Add physics flag
 - Setup physics bootstrapping
 - Poll for features that would be useful
