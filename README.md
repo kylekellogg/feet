@@ -38,8 +38,8 @@ feet .
 
 ### Optional Arguments
 
-| Arg       | Type  | Default       | Description                                                                           | Usage     |
-| :-------- | :---- | :------------ | :------------------------------------------------------------- | :-------- |
+| Arg       | Type  | Default       | Description | Usage     |
+| :-------- | :---- | :------------ | :---------- | :-------- |
 | wasd      | bool  | false         | Autogenerates code to handle WASD key input | `feet wasd=true` |
 | arrows    | bool  | false         | Autogenerates code to handle arrow key input | `feet arrows=true` |
 | keys      | bool  | false         | Autogenerates code to handle WASD and arrow key input | `feet keys=true` |
