@@ -37,7 +37,8 @@ feet .
 
     Autogenerates code to handle WASD key input
 
-    usage: ```
+    usage:
+ ```
 feet wasd=true
     ```
 - arrows
@@ -46,7 +47,8 @@ feet wasd=true
 
     Autogenerates code to handle arrow key input
 
-    usage: ```
+    usage:
+ ```
 feet arrows=true
     ```
 - keys
@@ -55,7 +57,8 @@ feet arrows=true
 
     Autogenerates code to handle WASD and arrow key input
 
-    usage: ```
+    usage:
+ ```
 feet keys=true
     ```
 - title
@@ -64,7 +67,8 @@ feet keys=true
 
     Autogenerates title in conf.lua
 
-    usage: ```
+    usage:
+ ```
 feet title="Need to Wrap in Quotes to Preserve Spaces"
     ```
 - width
@@ -73,7 +77,8 @@ feet title="Need to Wrap in Quotes to Preserve Spaces"
 
     Autogenerates width in conf.lua
 
-    usage: ```
+    usage:
+ ```
 feet width=1024
     ```
 - height
@@ -82,7 +87,8 @@ feet width=1024
 
     Autogenerates height in conf.lua
 
-    usage: ```
+    usage:
+ ```
 feet height=768
     ```
 
