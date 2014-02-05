@@ -9,7 +9,7 @@ Most [LÖVE](http://love2d.org/) libraries use a suggestive name ([see the list 
 You must have Lua 5.2 installed. It probably works with 5.1, but I've only tested with 5.2.
 
 If you have [Homebrew](http://brew.sh/) then you can just:
-```Shell
+```shell
 brew install lua52
 ```
 
@@ -17,7 +17,7 @@ brew install lua52
 
 ### Mac
 
-```Shell
+```shell
 curl -fsSl https://raw.github.com/sqow/love-feet/master/main.lua >> /usr/local/bin/feet; chmod a+x /usr/local/bin/feet;
 ```
 
