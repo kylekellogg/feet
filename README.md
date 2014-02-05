@@ -31,12 +31,65 @@ feet .
 
 ### Optional Arguments
 
-- wasd  (bool)  defaults to false
-- arrows  (bool)    defaults to false
-- keys  (bool)  defaults to false
-- title  (string)   defaults to ''
-- width  (int)  defaults to 800
-- height  (int) defaults to 600
+- wasd
+    (bool)
+    defaults to false
+
+    Autogenerates code to handle WASD key input
+
+    usage: ```
+feet wasd=true
+    ```
+- arrows
+    (bool)
+    defaults to false
+
+    Autogenerates code to handle arrow key input
+
+    usage: ```
+feet arrows=true
+    ```
+- keys
+    (bool)
+    defaults to false
+
+    Autogenerates code to handle WASD and arrow key input
+
+    usage: ```
+feet keys=true
+    ```
+- title
+    (string)
+    defaults to ''
+
+    Autogenerates title in conf.lua
+
+    usage: ```
+feet title="Need to Wrap in Quotes to Preserve Spaces"
+    ```
+- width
+    (int)
+    defaults to 800
+
+    Autogenerates width in conf.lua
+
+    usage: ```
+feet width=1024
+    ```
+- height
+    (int)
+    defaults to 600
+
+    Autogenerates height in conf.lua
+
+    usage: ```
+feet height=768
+    ```
+
+You can also chain optional arguments together in a space delimited list for more customization, e.g.
+```
+feet keys=true width=1024 height=768 title="Steve Holt!"
+```
 
 ## TODO
 - Incorporate Busted for testing
