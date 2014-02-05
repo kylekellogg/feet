@@ -43,7 +43,7 @@ feet .
 | wasd      | bool  | false         | `feet wasd=true` | Autogenerates code to handle WASD key input |
 | arrows    | bool  | false         | `feet arrows=true` | Autogenerates code to handle arrow key input |
 | keys      | bool  | false         | `feet keys=true` | Autogenerates code to handle WASD and arrow key input |
-| title     | string| ''            | `feet title="Wrap Titles With Spaces In Quotes"` | Autogenerates title in conf.lua |
+| title     | string| ''            | `feet title="Steve Holt!"` | Autogenerates title in conf.lua |
 | width     | int   | 800           | `feet width=1024` | Autogenerates width in conf.lua |
 | height    | int   | 600           | `feet height=768` | Autogenerates height in conf.lua |
 | physics   | bool  | false         | `feet physics=true` | Autogenerates a new physics world with 0 x gravity, 9.81 * 64 y gravity, the ability to sleep and sets a default meter size of 64 |
