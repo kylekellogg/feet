@@ -9,7 +9,7 @@ Most [LÖVE](http://love2d.org/) libraries use a suggestive name ([see the list 
 You must have Lua 5.2 installed. It probably works with 5.1, but I've only tested with 5.2.
 
 If you have [Homebrew](http://brew.sh/) then you can just:
-```shell
+```sh
 brew install lua52
 ```
 
@@ -17,7 +17,7 @@ brew install lua52
 
 ### Mac
 
-```shell
+```sh
 curl -fsSl https://raw.github.com/sqow/love-feet/master/main.lua >> /usr/local/bin/feet; chmod a+x /usr/local/bin/feet;
 ```
 
@@ -31,7 +31,7 @@ _Needs to be filled in_
 
 ## Usage
 
-```
+```sh
 cd {target directory}
 feet .
 ```
@@ -53,7 +53,7 @@ feet .
 | gravityY  | int   | 9.81 * meter  | `feet gravityY=75` | Will flag physics as true if set to anything. Sets the y gravity. |
 
 You can also chain optional arguments together in a space delimited list for more customization, e.g.
-```
+```sh
 feet keys=true width=1024 height=768 title="Steve Holt!"
 ```
 
