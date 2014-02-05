@@ -2,6 +2,8 @@
 
 A LÖVE bootstrapper to get you up and standing on your own two feet quickly and easily.
 
+Most LÖVE libraries use a suggestive name ([see the list here](https://www.love2d.org/wiki/Category:Libraries)) and I was trying to corner the whole foot fetish thing, but I'm not sure that comes across. Better name suggestions are welcome.
+
 ## Requirements
 
 You must have Lua 5.2 installed. It probably works with 5.1, but I've only tested with 5.2.
