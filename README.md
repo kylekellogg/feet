@@ -4,7 +4,12 @@ A LÖVE bootstrapper to get you up and standing on your own two feet quickly and
 
 ## Requirements
 
-_Needs to be filled in_
+You must have Lua 5.2 installed. It probably works with 5.1, but I've only tested with 5.2.
+
+If you have [Homebrew](http://brew.sh/) then you can just:
+```
+brew install lua52
+```
 
 ## Installation
 
@@ -99,6 +104,8 @@ feet keys=true width=1024 height=768 title="Steve Holt!"
 
 ## TODO
 - Incorporate Busted for testing
-- Establish requirements
+- Add physics flag
+- Setup physics bootstrapping
+- Poll for features that would be useful
 - Establish Windows installation
 - Establish Linux installation
