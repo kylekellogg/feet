@@ -8,6 +8,18 @@ _Needs to be filled in_
 
 ## Installation
 
+### Mac
+
+```
+curl -fsSl https://raw.github.com/sqow/love-feet/master/main.lua >> /usr/local/bin/feet; chmod a+x /usr/local/bin/feet;
+```
+
+### Windows
+
+_Needs to be filled in_
+
+### Linux
+
 _Needs to be filled in_
 
 ## Usage
