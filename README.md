@@ -45,9 +45,9 @@ feet .
     Autogenerates code to handle WASD key input
 
     usage:
- ```
+```
 feet wasd=true
-    ```
+```
 - arrows
     (bool)
     defaults to false
@@ -55,9 +55,9 @@ feet wasd=true
     Autogenerates code to handle arrow key input
 
     usage:
- ```
+```
 feet arrows=true
-    ```
+```
 - keys
     (bool)
     defaults to false
@@ -65,9 +65,9 @@ feet arrows=true
     Autogenerates code to handle WASD and arrow key input
 
     usage:
- ```
+```
 feet keys=true
-    ```
+```
 - title
     (string)
     defaults to ''
@@ -75,9 +75,9 @@ feet keys=true
     Autogenerates title in conf.lua
 
     usage:
- ```
+```
 feet title="Need to Wrap in Quotes to Preserve Spaces"
-    ```
+```
 - width
     (int)
     defaults to 800
@@ -85,9 +85,9 @@ feet title="Need to Wrap in Quotes to Preserve Spaces"
     Autogenerates width in conf.lua
 
     usage:
- ```
+```
 feet width=1024
-    ```
+```
 - height
     (int)
     defaults to 600
@@ -95,9 +95,59 @@ feet width=1024
     Autogenerates height in conf.lua
 
     usage:
- ```
+```
 feet height=768
-    ```
+```
+- physics
+    (bool)
+    defaults to false
+
+    Autogenerates a new physics world with 0 x gravity, 9.81 * 64 y gravity, the ability to sleep and sets a default meter size of 64
+
+    usage:
+```
+feet physics=true
+```
+- meter
+    (int)
+    defaults to 64
+
+    Will flag physics as true if set to anything. Sets a default meter size.
+
+    usage:
+```
+feet meter=32
+```
+- gravity
+    (int)
+    defaults to 9.81 * meter
+
+    Will flag physics as true if set to anything. Sets the y gravity and is given preferential treatment over gravityY if that flag is also set.
+
+    usage:
+```
+feet gravity=50
+```
+- gravityX
+    (int)
+    defaults to 0
+
+    Will flag physics as true if set to anything. Sets the x gravity.
+
+    usage:
+```
+feet gravityX=10
+```
+- gravityY
+    (int)
+    defaults to 9.81 * meter
+
+    Will flag physics as true if set to anything. Sets the y gravity.
+
+    usage:
+```
+feet gravityY=75
+```
 
 You can also chain optional arguments together in a space delimited list for more customization, e.g.
 ```
