@@ -17,7 +17,7 @@ brew install lua52
 
 ### Mac
 
-```
+```Shell
 curl -fsSl https://raw.github.com/sqow/love-feet/master/main.lua >> /usr/local/bin/feet; chmod a+x /usr/local/bin/feet;
 ```
 
