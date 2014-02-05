@@ -9,7 +9,7 @@ Most [LÖVE](http://love2d.org/) libraries use a suggestive name ([see the list 
 You must have Lua 5.2 installed. It probably works with 5.1, but I've only tested with 5.2.
 
 If you have [Homebrew](http://brew.sh/) then you can just:
-```bash
+```Shell
 brew install lua52
 ```
 
