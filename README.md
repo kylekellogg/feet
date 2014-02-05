@@ -38,11 +38,15 @@ feet .
 
 ### Optional Arguments
 
+| Arg   | Type  | Default   | Description               | Usage     |
+| :---- | :---- | :-------- | :------------------------ | :-------- |
+| wasd  | bool  | false     | Autogenerates code to handle WASD key input | `feet wasd=true` |
+
 - wasd
     (bool)
     defaults to false
 
-    Autogenerates code to handle WASD key input
+    
 
     usage:
 ```
