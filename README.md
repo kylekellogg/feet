@@ -47,10 +47,10 @@ feet .
 | width     | int   | 800           | `feet width=1024` | Autogenerates width in conf.lua |
 | height    | int   | 600           | `feet height=768` | Autogenerates height in conf.lua |
 | physics   | bool  | false         | `feet physics=true` | Autogenerates a new physics world with 0 x gravity, 9.81 * 64 y gravity, the ability to sleep and sets a default meter size of 64 |
-| meter     | int   | 64            | `feet meter=32` | Will flag physics as true if set to anything. Sets a default meter size. |
-| gravity   | int   | 9.81 * meter  | `feet gravity=50` | Will flag physics as true if set to anything. Sets the y gravity and is given preferential treatment over gravityY if that flag is also set. |
-| gravityX  | int   | 0             | `feet gravityX=10` | Will flag physics as true if set to anything. Sets the x gravity. |
-| gravityY  | int   | 9.81 * meter  | `feet gravityY=75` | Will flag physics as true if set to anything. Sets the y gravity. |
+| meter     | int   | 64            | `feet meter=32` | Will flag physics as true if set to not nil or false. Sets a default meter size. |
+| gravity   | int   | 9.81 * meter  | `feet gravity=50` | Will flag physics as true if set to not nil or false. Sets the y gravity and is given preferential treatment over gravityY if that flag is also set. |
+| gravityX  | int   | 0             | `feet gravityX=10` | Will flag physics as true if set to not nil or false. Sets the x gravity. |
+| gravityY  | int   | 9.81 * meter  | `feet gravityY=75` | Will flag physics as true if set to not nil or false. Sets the y gravity. |
 
 You can also chain optional arguments together in a space delimited list for more customization, e.g.
 ```sh
