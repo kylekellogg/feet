@@ -56,7 +56,7 @@ feet .
 | gravity   | int       | 9.81 * meter  | `feet gravity=50` | Will flag physics as true if set to not nil or false. Sets the y gravity and is given preferential treatment over gravityY if that flag is also set. |
 | gravityX  | int       | 0             | `feet gravityX=10` | Will flag physics as true if set to not nil or false. Sets the x gravity. |
 | gravityY  | int       | 9.81 * meter  | `feet gravityY=75` | Will flag physics as true if set to not nil or false. Sets the y gravity. |
-| libs      | string    | nil           | `feet libs=relative-path.lua` | Will automatically acquire, create the necessary directories, and _dumbly_ include the specified libraries. See the [Libs](libs) section for more info.
+| libs      | string    | nil           | `feet libs=relative-path.lua` | Will automatically acquire, create the necessary directories, and _dumbly_ include the specified libraries. See the [Libs](#libs) section for more info.
 
 You can also chain optional arguments together in a space delimited list for more customization, e.g.
 ```sh
