@@ -92,3 +92,7 @@ All of these will, by default, be added to the `main.lua` file that is generated
 - Poll for features that would be useful
 - Establish Windows installation
 - Establish Linux installation
+
+## Author
+
+This project was created and is maintained by [@kylekellogg](https://twitter.com/kylekellogg)
