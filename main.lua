@@ -13,7 +13,9 @@ local flags = {
 
   title = '',
   width = 800,
-  height = 600
+  height = 600,
+
+  libs = nil
 }
 
 local forceBool = {
@@ -23,9 +25,85 @@ local forceBool = {
   physics = true
 }
 
-local a = nil
-local b = nil
-local s = nil
+local libsFolder = 'libs'
+local fileSeparator = os.tmpname():sub( 1, 1 ) == '\\' and '\\' or '/'
+local libs = {}
+
+local a, b, s = nil, nil, nil
+
+local function ensureDirectory( dir )
+  local success = os.execute( '[ -d ' .. dir .. ' ]' )
+  if not success then
+    if not os.execute( 'mkdir ' .. dir ) then
+      print( 'Could not make directory ' .. dir )
+      return nil
+    end
+  end
+  return true
+end
+
+local function ensureLibsDirectory()
+  return ensureDirectory( '.' .. fileSeparator .. libsFolder )
+end
+
+local function downloadFileTo( source, target )
+  return os.execute( 'curl -fsSL ' .. source .. ' -o ' .. target )
+end
+
+local function unzipFromTo( source, target )
+  ensureDirectory( target )
+  return os.execute( 'unzip -q ' .. source .. ' -d ' .. target )
+end
+
+local function scanDir( dir )
+  local i, t, popen = 0, {}, io.popen
+  for filename in popen('ls -a "'..dir..'"'):lines() do
+    i = i + 1
+    if filename ~= '.' and filename ~= '..' then
+      t[#t+1] = filename
+    end
+  end
+  return t
+end
+
+local function processLib( lib )
+  local source, target, success = lib.source, lib.target, nil
+  local filetype = source:sub( -4 )
+  local orig = '.' .. fileSeparator .. libsFolder .. fileSeparator .. target .. filetype
+
+  success = downloadFileTo( source, orig )
+  if not success then
+    print( 'Could not donwload ' .. source )
+  end
+
+  if success and filetype == '.zip' then
+    local targ = orig:sub( 1, #orig - #filetype )
+    success = unzipFromTo( orig, targ )
+    if not success then
+      print( 'Could not extract ' .. orig )
+    else
+      os.remove( orig )
+      local t = scanDir( targ )
+      if #t == 1 and t[1]:sub( -4, -4 ) ~= '.' and t[1]:sub( -5, -5 ) ~= '.' then
+        --  Directory (or a really weird file)
+        local badDir = targ .. fileSeparator .. t[1] .. fileSeparator
+        os.execute( 'mv ' .. badDir .. '* ' .. targ )
+        os.remove( badDir )
+      end
+      libs[ #libs + 1 ] = targ:sub( 3 )
+    end
+  elseif success and filetype ~= '.zip' then
+    libs[ #libs + 1 ] = target
+  end
+end
+
+local function processLibs( libs )
+  ensureLibsDirectory()
+
+  for k, v in pairs( libs ) do
+    processLib( v )
+  end
+end
 
 --  Reset flags based on user input
 
@@ -38,7 +116,12 @@ for _,v in ipairs( arg ) do
     if forceBool[a] then
       flags[a] = b ~= 'false' and true or false
     else
-      flags[a] = b
+      if a:lower() == 'libs' then
+        flags[a] = dofile( b )
+        processLibs( flags[a] )
+      else
+        flags[a] = b
+      end
     end
   end
 end
@@ -77,6 +160,19 @@ function keyString( lvl, main, alt )
     return ''
   end
 end
+
+function returnLibStrings()
+  local str = ''
+  for _, v in ipairs( libs ) do
+    str = str .. [[
+require ']] .. v .. [['
+]]
+  end
+
+  return str
+end
+
+local libsStr = not flags.libs and '' or returnLibStrings()
 
 local keyLvl = flags.keys and 1 or flags.wasd and flags.arrows and 1 or flags.wasd and 2 or flags.arrows and 3 or 0
 local keys = {
@@ -137,7 +233,10 @@ if keyDown.up then
   end
 ]]
 
-mainFile:write( keyVars..[[
+mainFile:write( (not flags.libs and '' or [[
+]]..libsStr..[[
+
+]])..keyVars..[[
 
 --  Main functions
 
