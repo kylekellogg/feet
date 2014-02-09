@@ -73,7 +73,7 @@ local function processLib( lib )
 
   success = downloadFileTo( source, orig )
   if not success then
-    print( 'Could not donwload ' .. source )
+    print( 'Could not download ' .. source )
   end
 
   if success and filetype == '.zip' then
@@ -93,7 +93,7 @@ local function processLib( lib )
       libs[ #libs + 1 ] = targ:sub( 3 )
     end
   elseif success and filetype ~= '.zip' then
-    libs[ #libs + 1 ] = target
+    libs[ #libs + 1 ] = libsFolder .. fileSeparator .. target
   end
 end
 
