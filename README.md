@@ -91,11 +91,11 @@ You can snag a nearly-complete list of all the [libraries](https://www.love2d.or
 
 ## Demos
 
-1. [Bare minimum](demos/bare-minimum/)
-2. [Keys](demos/keys/)
-3. [Physics](demos/physics/)
-4. [Libs sans libraries](demos/libs-sans-libraries/)
-5. [The whole shebang](demos/the-whole-shebang/)
+1. [Bare minimum](demos/bare-minimum/) was setup with `feet`
+2. [Keys](demos/keys/) was setup with `feet keys=true`
+3. [Physics](demos/physics/) was setup with `feet physics=true`
+4. [Libs sans libraries](demos/libs-sans-libraries/) was setup with `feet libs=../libs.lua`
+5. [The whole shebang](demos/the-whole-shebang/) was setup with `feet libs=../libs.lua keys=true physics=true meter=32 gravity=0.01 title="Steve Holt!" width=1024 height=768`
 
 ## TODO
 - Incorporate [Busted](http://olivinelabs.com/busted/) for testing
