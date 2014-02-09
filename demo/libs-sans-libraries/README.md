@@ -1,0 +1,1 @@
+__This demo does not include any of the libraries it lists in [main.lua](main.lua) because I do not own or have any rights to them. You can find them via the links in [libs.lua](../libs.lua). All of the credit for their creation goes to their respective creators.__
