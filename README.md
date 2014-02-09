@@ -6,14 +6,14 @@ Most [LÖVE/Love2d](http://love2d.org/) libraries use a suggestive name ([see th
 
 ## Requirements
 
-You must have Lua 5.2 installed. It probably works with 5.1, but I've only tested with 5.2.
+You must have [Lua 5.2](http://www.lua.org/) installed. It probably works with 5.1, but I've only tested with 5.2.
 
 If you have [Homebrew](http://brew.sh/) then you can just:
 ```sh
 brew install lua52
 ```
 
-If you intend to use the `libs` flag, you must also have curl installed. Again, if you have [Homebrew](http://brew.sh/) then you can just:
+If you intend to use the `libs` flag, you must also have `curl` installed. Again, if you have [Homebrew](http://brew.sh/) then you can just:
 ```sh
 brew install curl
 ```
