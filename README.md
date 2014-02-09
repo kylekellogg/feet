@@ -91,11 +91,11 @@ You can snag a nearly-complete list of all the [libraries](https://www.love2d.or
 
 ## Demos
 
-1. [Bare minimum](demo/bare-minimum/)
-2. [Keys](demo/keys/)
-3. [Physics](demo/physics/)
-4. [Libs sans libraries](demo/libs-sans-libraries/)
-5. [The whole shebang](demo/the-whole-shebang/)
+1. [Bare minimum](demos/bare-minimum/)
+2. [Keys](demos/keys/)
+3. [Physics](demos/physics/)
+4. [Libs sans libraries](demos/libs-sans-libraries/)
+5. [The whole shebang](demos/the-whole-shebang/)
 
 ## TODO
 - Incorporate [Busted](http://olivinelabs.com/busted/) for testing
