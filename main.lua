@@ -32,7 +32,7 @@ local libs = {}
 local a, b, s = nil, nil, nil
 
 local function ensureDirectory( dir )
-  assert( type( dir ) == 'string', 'The argument passed '..tostring( dir )..' needs to be a string.' )
+  assert( type( dir ) == 'string', 'ensureDirectory -> The argument passed '..tostring( dir )..' needs to be a string.' )
 
   local success = os.execute( '[ -d ' .. dir .. ' ]' )
   if not success then
@@ -49,22 +49,22 @@ local function ensureLibsDirectory()
 end
 
 local function downloadFileTo( source, target )
-  assert( type( source ) == 'string', 'The first argument passed '..tostring( source )..' needs to be a string.' )
-  assert( type( target ) == 'string', 'The second argument passed '..tostring( target )..' needs to be a string.' )
+  assert( type( source ) == 'string', 'downloadFileTo -> The first argument passed '..tostring( source )..' needs to be a string.' )
+  assert( type( target ) == 'string', 'downloadFileTo -> The second argument passed '..tostring( target )..' needs to be a string.' )
 
   return os.execute( 'curl -fsSL ' .. source .. ' -o ' .. target )
 end
 
 local function unzipFromTo( source, target )
-  assert( type( source ) == 'string', 'The first argument passed '..tostring( source )..' needs to be a string.' )
-  assert( type( target ) == 'string', 'The second argument passed '..tostring( target )..' needs to be a string.' )
+  assert( type( source ) == 'string', 'unzipFromTo -> The first argument passed '..tostring( source )..' needs to be a string.' )
+  assert( type( target ) == 'string', 'unzipFromTo -> The second argument passed '..tostring( target )..' needs to be a string.' )
 
   ensureDirectory( target )
   return os.execute( 'unzip -q ' .. source .. ' -d ' .. target )
 end
 
 local function scanDir( dir )
-  assert( type( dir ) == 'string', 'The argument passed '..tostring( dir )..' needs to be a string.' )
+  assert( type( dir ) == 'string', 'scanDir -> The argument passed '..tostring( dir )..' needs to be a string.' )
 
   local i, t, popen = 0, {}, io.popen
   for filename in popen('ls -a "'..dir..'"'):lines() do
@@ -77,7 +77,7 @@ local function scanDir( dir )
 end
 
 local function processLib( lib )
-  assert( type( lib ) == 'string', 'The argument passed '..tostring( lib )..' needs to be a string.' )
+  assert( type( lib ) == 'table', 'processLib -> The argument passed '..tostring( lib )..' needs to be a table.' )
 
   local source, target, success = lib.source, lib.target, nil
   local filetype = source:sub( -4 )
@@ -110,7 +110,7 @@ local function processLib( lib )
 end
 
 local function processLibs( libs )
-  assert( type( libs ) == 'table', 'The argument passed '..tostring( libs )..' needs to be a table.' )
+  assert( type( libs ) == 'table', 'processLibs -> The argument passed '..tostring( libs )..' needs to be a table.' )
 
   ensureLibsDirectory()
 
