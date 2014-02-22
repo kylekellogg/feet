@@ -32,6 +32,8 @@ local libs = {}
 local a, b, s = nil, nil, nil
 
 local function ensureDirectory( dir )
+  assert( type( dir ) == 'string', 'The argument passed '..tostring( dir )..' needs to be a string.' )
+
   local success = os.execute( '[ -d ' .. dir .. ' ]' )
   if not success then
     if not os.execute( 'mkdir ' .. dir ) then
@@ -47,15 +49,23 @@ local function ensureLibsDirectory()
 end
 
 local function downloadFileTo( source, target )
+  assert( type( source ) == 'string', 'The first argument passed '..tostring( source )..' needs to be a string.' )
+  assert( type( target ) == 'string', 'The second argument passed '..tostring( target )..' needs to be a string.' )
+
   return os.execute( 'curl -fsSL ' .. source .. ' -o ' .. target )
 end
 
 local function unzipFromTo( source, target )
+  assert( type( source ) == 'string', 'The first argument passed '..tostring( source )..' needs to be a string.' )
+  assert( type( target ) == 'string', 'The second argument passed '..tostring( target )..' needs to be a string.' )
+
   ensureDirectory( target )
   return os.execute( 'unzip -q ' .. source .. ' -d ' .. target )
 end
 
 local function scanDir( dir )
+  assert( type( dir ) == 'string', 'The argument passed '..tostring( dir )..' needs to be a string.' )
+
   local i, t, popen = 0, {}, io.popen
   for filename in popen('ls -a "'..dir..'"'):lines() do
     i = i + 1
@@ -67,6 +77,8 @@ local function scanDir( dir )
 end
 
 local function processLib( lib )
+  assert( type( lib ) == 'string', 'The argument passed '..tostring( lib )..' needs to be a string.' )
+
   local source, target, success = lib.source, lib.target, nil
   local filetype = source:sub( -4 )
   local orig = '.' .. fileSeparator .. libsFolder .. fileSeparator .. target .. filetype
@@ -98,10 +110,46 @@ local function processLib( lib )
 end
 
 local function processLibs( libs )
+  assert( type( libs ) == 'table', 'The argument passed '..tostring( libs )..' needs to be a table.' )
+
   ensureLibsDirectory()
 
   for k, v in pairs( libs ) do
     processLib( v )
+  end
+end
+
+--  Help handling
+
+if #arg == 1 then
+  if type( arg[1] ) == 'string' then
+    if arg[1]:match( '^%-h$' ) or
+       arg[1]:match( '^%-%-h$' ) or
+       arg[1]:match( '^%-help$' ) or
+       arg[1]:match( '^%-%-help$' ) or
+       arg[1]:match( '^help$' ) or
+       arg[1]:match( '^h$' ) then
+      
+      print( [[
+
+Usage: feet [[arg=value]...]
+
+Arguments included:
+  - wasd      (bool)    Whether or not to include the wasd key setup code.
+  - arrows    (bool)    Whether or not to include the arrow key setup code.
+  - keys      (bool)    Whether or not to include the wasd and arrow key setup code.
+  - title     (string)  The title of your application.
+  - width     (int)     The width of your application.
+  - height    (int)     The height of your application.
+  - physics   (bool)    Whether or not to include the physics setup code.
+  - meter     (float)   An explicit value for the meter size.
+  - gravity   (float)   An explicit value for the Y gravity.
+  - gravityX  (float)   An explicit value for the X gravity.
+  - gravityY  (float)   An explicit value for the Y gravity.
+  - libs      (string)  A relative path to a .lua file that returns a table of tables each with 'source' and 'target' varibles with string values.
+]] )
+      os.exit( true )
+    end
   end
 end
 
