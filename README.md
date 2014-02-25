@@ -23,7 +23,7 @@ brew install curl
 ### Mac
 
 ```sh
-curl -fsSL https://raw.github.com/sqow/love-feet/master/main.lua >> /usr/local/bin/feet; chmod a+x /usr/local/bin/feet;
+curl -fsSL https://raw.github.com/sqow/feet/master/main.lua -o /usr/local/bin/feet; chmod a+x /usr/local/bin/feet;
 ```
 
 ### Windows
